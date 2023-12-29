@@ -1,14 +1,12 @@
-const config = require("./utils/config");
 const express = require("express");
-const postRoutes = require("./routes/postRoutes");
-const logger = require("./utils/logger");
-const admin = require("firebase-admin");
+const morgan = require("morgan");
 const app = express();
-app.use(express.json());
 
-logger.info("connecting to", config.FIREBASE_URL);
 
+// MIDDLEWARES
+if(process.env.NODE_ENV === "development") {
+    app.use(morgan("dev"));
+}
 app.use(express.json());
-app.use("/api/v1/posts", postRoutes);
 
 module.exports = app;
