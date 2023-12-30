@@ -2,7 +2,7 @@
   "name": "intranet_api",
   "version": "1.0.0",
   "description": "adicionar, remover e editar post ",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js"
   },
