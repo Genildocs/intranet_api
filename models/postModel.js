@@ -1,17 +1,18 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-const postSchema = new mongoose.Schema({
+const postSchema = new Schema({
   title: {
     type: String,
-    required: [true, "Campo necessario!"],
+    required: [true, 'Required field!'],
     minLength: 5,
     unique: true,
   },
   text: {
     type: String,
-    required: [true, "Campo necessario!"],
+    required: [true, 'Required field!'],
   },
 });
-const Post = mongoose.model("Post", postSchema);
+const Post = mongoose.model('Post', postSchema);
 
 module.exports = Post;
